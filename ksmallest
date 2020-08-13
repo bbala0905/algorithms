@@ -1,0 +1,10 @@
+# k smallest elements in unsorted array
+def ksmallest(a, k):
+    temp = a[:k]
+    for i in range(k, len(a)):
+        maxInTemp = max(temp)
+        if a[i] < maxInTemp:
+            temp.remove(maxInTemp)
+            temp.append(a[i])
+            
+    return temp
